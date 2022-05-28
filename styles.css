@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Es una forma de crear variables --nombreDeVariable: Valor; */
+  --White: hsl(0, 0%, 100%);
+  --LightGray: hsl(212, 45%, 89%);
+  --GrayishBlue: hsl(220, 15%, 55%);
+  --DarkBlue: hsl(218, 44%, 22%);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--LightGray);
+}
+
+.section-container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+.card-container {
+  height: 500px;
+  width: 320px;
+  background-color: var(--White);
+  margin: 40px auto;
+  border-radius: 16px;
+  padding: 16px;
+  transition: 300ms;
+}
+
+.card-container:hover {
+  cursor: pointer;
+  box-shadow: 10px 10px 10px;
+  transition: 300ms;
+  margin-top: 30px;
+}
+
+#display-card-2 {
+  display: none;
+}
+
+#display-card-3 {
+  display: none;
+}
+
+.img-container img{
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  animation: upCenter 500ms none;
+}
+
+h1 {
+  color: var(--DarkBlue);
+  font-size: 23px;
+  text-align: center;
+  margin: 0 15px;
+  margin-bottom: 24px;
+  animation: leftCenter 500ms none;
+}
+
+p {
+  color: var(--GrayishBlue);
+  font-size: 18px;
+  text-align: center;
+  margin: 0 15px;
+  animation: rightCenter 500ms none;
+}
+
+
+.attribution {
+  font-size: 18px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ANIMACIONES */
+
+@keyframes upCenter {
+  0% {
+    transform: translatey(-500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes leftCenter {
+  0% {
+    transform: translatex(-500px);
+  }
+  100% {
+    transform: translatex(0px);
+  }
+}
+
+@keyframes rightCenter {
+  0% {
+    transform: translatex(500px);
+  }
+  100% {
+    transform: translatex(0px);
+  }
+}
+
+/* MEDIAS QUERIES */
+
+/* MOBILE PHONE */
+@media (min-width: 320px) {
+}
+
+/* TABLETS */
+@media (min-width: 361px) {
+
+  #display-card-2 {
+    display: block;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 769px) {
+
+  .section-container {
+    padding-top: 2.5rem;
+  }
+
+  #display-card-3 {
+    display: block;
+  }
+}
